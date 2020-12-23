@@ -6,7 +6,7 @@
   <link href="https://mao0824.github.io.git/atom.xml" rel="self"/>
   
   <link href="https://mao0824.github.io.git/"/>
-  <updated>2020-12-22T03:04:00.794Z</updated>
+  <updated>2020-12-21T08:15:06.224Z</updated>
   <id>https://mao0824.github.io.git/</id>
   
   <author>
@@ -15,31 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>IDEA插件推荐</title>
-    <link href="https://mao0824.github.io.git/2020/12/22/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
-    <id>https://mao0824.github.io.git/2020/12/22/IDEA%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/</id>
-    <published>2020-12-22T02:51:41.000Z</published>
-    <updated>2020-12-22T03:04:00.794Z</updated>
-    
-    <content type="html"><![CDATA[<p>持续更新~~~~~</p><h4 id="一、Translation-插件"><a href="#一、Translation-插件" class="headerlink" title="一、Translation 插件"></a>一、<strong>Translation</strong> <strong>插件</strong></h4><p>这款插件是谷歌翻译插件，在idea里面也可以将英文翻译成中文，当然你也可以设置成其他的语言。</p><p><img src="https://cdn.jsdelivr.net/gh/mao0824/pictureBed@latest/2020/12/22/00e2d54a2108e82f71ade9792293099b.png"></p><h4 id="二、Material-Theme-UI"><a href="#二、Material-Theme-UI" class="headerlink" title="二、Material Theme UI"></a>二、<strong>Material Theme UI</strong></h4><p>对于很多人而言，写代码时略显枯燥的，如果能够安装自己喜欢的主题将为开发工作带来些许乐趣。</p><p>IDEA 支持各种主题插件，其中最出名的当属 Material Theme UI。</p><p>安装后，可以从该插件内置的各种风格个选择自己最喜欢的一种。</p><h4 id="三、Atom-Material-Icons"><a href="#三、Atom-Material-Icons" class="headerlink" title="三、Atom Material Icons"></a>三、<strong>Atom Material Icons</strong></h4><p>图标样式</p><p><img src="https://cdn.jsdelivr.net/gh/mao0824/pictureBed@latest/2020/12/22/e7a1473d315879eb7d282b73f0d271e3.png"></p><h4 id="四、Nyan-Progress-Bar插件"><a href="#四、Nyan-Progress-Bar插件" class="headerlink" title="四、Nyan Progress Bar插件"></a>四、<strong>Nyan Progress Bar插件</strong></h4><p>安装上文已经提过，这里就不再重复，此插件是将原来的进度条美化，变成一个可爱的彩虹猫，编程的同时，有这么只猫陪着，也算是赏心悦目了，效果如下：</p><p><img src="https://cdn.jsdelivr.net/gh/mao0824/pictureBed@latest/2020/12/22/38fbd4d324aa1143599c08eb2c59b196.png"></p><h4 id="五、Codota"><a href="#五、Codota" class="headerlink" title="五、Codota"></a>五、<strong>Codota</strong></h4><p>代码提示工具，扫描你的代码后，根据你的敲击完美提示</p><p>Codota基于数百万个开源Java程序和您的上下文来完成代码行，从而帮助您以更少的错误更快地进行编码。</p><p>Alibaba Java Coding Guidelines</p><p>阿里巴巴的编码规约检查插件，检查你的编码习惯，让你更规范。</p><h4 id="六、Grep-Console"><a href="#六、Grep-Console" class="headerlink" title="六、Grep Console"></a>六、<strong>Grep Console</strong></h4><p>控制台日志分组输出颜色</p><h4 id="七、Chinese-Simplified-Language-Pack-EAP"><a href="#七、Chinese-Simplified-Language-Pack-EAP" class="headerlink" title="七、Chinese (Simplified) Language Pack EAP"></a>七、<strong>Chinese (Simplified) Language Pack EAP</strong></h4><p>添加中文作为 IDE 界面语言</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;持续更新~~~~~&lt;/p&gt;
-&lt;h4 id=&quot;一、Translation-插件&quot;&gt;&lt;a href=&quot;#一、Translation-插件&quot; class=&quot;headerlink&quot; title=&quot;一、Translation 插件&quot;&gt;&lt;/a&gt;一、&lt;strong&gt;Translation</summary>
-      
-    
-    
-    
-    <category term="插件推荐" scheme="https://mao0824.github.io.git/categories/%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
-    
-    
-    <category term="IDEA优化" scheme="https://mao0824.github.io.git/tags/IDEA%E4%BC%98%E5%8C%96/"/>
-    
-  </entry>
   
   <entry>
     <title>Hexo + GitHub 实现个人博客</title>
