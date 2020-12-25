@@ -3595,6 +3595,9 @@ _:future,
   font-size: 0.78em;
   cursor: pointer;
 }
+#page-header a {
+  color: #e3fdfd;
+}
 #pagination {
   overflow: hidden;
   margin-top: 1rem;
