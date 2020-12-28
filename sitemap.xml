@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mao0824.github.io.git/2020/12/28/%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/</loc>
+    
+    <lastmod>2020-12-28</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://mao0824.github.io.git/2020/12/28/IDEA%E5%A5%BD%E7%94%A8%E6%8F%92%E4%BB%B6/</loc>
     
     <lastmod>2020-12-28</lastmod>
@@ -73,6 +80,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://mao0824.github.io.git/tags/%E5%80%BC%E4%BC%A0%E9%80%92/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -84,6 +98,13 @@
   
   <url>
     <loc>https://mao0824.github.io.git/categories/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mao0824.github.io.git/categories/Java/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
