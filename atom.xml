@@ -6,7 +6,7 @@
   <link href="https://mao0824.github.io.git/atom.xml" rel="self"/>
   
   <link href="https://mao0824.github.io.git/"/>
-  <updated>2020-12-28T06:42:08.718Z</updated>
+  <updated>2020-12-29T00:48:39.090Z</updated>
   <id>https://mao0824.github.io.git/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java中五种常见的代码块</title>
+    <link href="https://mao0824.github.io.git/2020/12/29/Java%E4%B8%AD%E4%BA%94%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97/"/>
+    <id>https://mao0824.github.io.git/2020/12/29/Java%E4%B8%AD%E4%BA%94%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97/</id>
+    <published>2020-12-29T00:45:39.000Z</published>
+    <updated>2020-12-29T00:48:39.090Z</updated>
+    
+    <content type="html"><![CDATA[<p>代码块：代码块是一种常见的代码形式。他用大括号“｛｝”将多行代码封装在一起，形成一个独立的代码区，这就构成了代码块。</p><ul><li>普通代码块（成员/局部代码块）</li><li>构造代码块</li><li>构造方法（特殊代码块）</li><li>静态代码块</li><li>执行顺序</li></ul><h2 id="普通代码块"><a href="#普通代码块" class="headerlink" title="普通代码块"></a>普通代码块</h2><p>最常见的代码块，在方法内用{ } 括起来的数据，就是普通代码块。</p><p><strong>在代码块中的变量只在代码块中生效</strong></p><p>作用：</p><p>限定变量的生命周期，及早的释放无用变量（因为通常局部变量的生命周期包含整个方法域，在方法结束后才会进行回收），提高内存的利用率。</p><h2 id="构造代码块"><a href="#构造代码块" class="headerlink" title="构造代码块"></a>构造代码块</h2><p>既然有方法体内的代码块，那肯定有<strong>java类中方法体之外</strong>的代码块，就变成了现在这个——构造代码块。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public void testMethod() &#123;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">​    &#123;</span><br><span class="line"></span><br><span class="line">​      System.out.println(&quot;oh yo yo yo~&quot;);</span><br><span class="line"></span><br><span class="line">​    &#125;</span><br><span class="line"></span><br><span class="line">​    </span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><p>构造代码块，顾名思义，它是用来对对象进行初始化的（给所有对象进行初始化）。</p><p><strong>构造代码块与相应的构造方法合并了</strong>，换句话说，就是<strong>构造代码块依托于构造方法执行，且先执行构造代码块中的代码，再执行相应的构造方法。</strong></p><h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>构造函数的命名必须和类名完全相同,在java中普通函数可以和构造函数同名，但是必须带有返回值；</p><p>构造函数的功能主要用于在类的对象创建时定义初始化的状态。它没有返回值，也不能用void来修饰。这就保证了它不仅什么也不用自动返回，而且根本不能有任何选择。而其他方法都有返回值，即使是void返回值。尽管方法体本身不会自动返回什么，但仍然可以让它返回一些东西，而这些东西可能是不安全的；</p><p>构造函数不能被直接调用，必须通过new运算符在创建对象时才会自动调用；而一般的方法是在程序执行到它的时候被调用的；</p><p>当定义一个类的时候，通常情况下都会显示该类的构造函数，并在函数中指定初始化的工作也可省略，不过Java编译器会提供一个默认的构造函数.此默认构造函数是不带参数的。而一般的方法不存在这一特点；</p><h2 id="静态代码块"><a href="#静态代码块" class="headerlink" title="静态代码块"></a>静态代码块</h2><p>静态代码块就是在{}的前面加上static的修饰符，它出现的位置应该是java类中，方法体之外：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">  static &#123;</span><br><span class="line"></span><br><span class="line">​    System.out.println(&quot;static yo~&quot;);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>静态代码块就像静态变量一样，<strong>其会在类加载时运行，而且只运行一次</strong>。</p><p>一个类中<strong>可以包含多个静态代码块</strong>，其会<strong>按照书写顺序</strong>依次执行。</p><p>程序加载和执行顺序:</p><p>  父类静态信息-&gt;子类静态信息-&gt;父类对象级别-&gt;子类对象级别</p><p>作用：</p><p>如果说，在项目启动时你有许多的配置文件要加载，或者你要建立连接的时候（比如JDBC连接数据库的时候），就可以使用静态代码块进行配置，这些代码会<strong>随着项目的启动（一般与项目相关的类都会进行加载，除非你根本没有用到这个类）而进行执行</strong>。</p><h2 id="同步代码块"><a href="#同步代码块" class="headerlink" title="同步代码块"></a>同步代码块</h2><p>   同步代码块的使用主要跟线程相关，它是共用同一把锁的代码块（也就是说其访问互斥）。</p><p>同步代码块传入的参数称为同步监视器（锁），当线程开始执行同步代码块时必须先获得其对应锁，执行完成后对锁进行释放。</p><h2 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a>执行顺序</h2><p>对象的初始化顺序：</p><ol><li><p>首先执行父类静态的内容，父类静态的内容执行完毕后，接着去执行子类的静态的内容，（静态内容只会执行一次）</p></li><li><p>当子类的静态内容执行完毕之后，再去看父类有没有构造代码块，如果有就执行父类的构造代码块，父类的构造代码块执行完毕，接着执行父类的构造方法；</p></li><li><p>父类的构造方法执行完毕之后，它接着去看子类有没有构造代码块，如果有就执行子类的构造代码块。子类的构造代码块执行完毕再去执行子类的构造方法。</p><p>总之一句话，静态代码块内容先执行，接着执行父类构造代码块和构造方法，然后执行子类构造代码块和构造方法。</p></li></ol><p><strong>在静态代码块中不能访问成员变量，根本原因在于: 在类初始化时 静态资源是由于类的成员加载的，此时类的成员并没有被加载进jvm**</strong>。**</p><p>​      <strong>Java中的静态方法在class文件被加载时就会分配内存，而非静态方法要在程序运行过程中类实例化后才会存在；因此静态方法可以用类名来调用，不用实例化，也可以用对象名来调用；而非静态方法只能在类实例化之后用对象名来调用；</strong></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;代码块：代码块是一种常见的代码形式。他用大括号“｛｝”将多行代码封装在一起，形成一个独立的代码区，这就构成了代码块。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;普通代码块（成员/局部代码块）&lt;/li&gt;
+&lt;li&gt;构造代码块&lt;/li&gt;
+&lt;li&gt;构造方法（特殊代码块）&lt;/li&gt;
+&lt;li&gt;静态代码</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="https://mao0824.github.io.git/categories/Java/"/>
+    
+    
+    <category term="代码块" scheme="https://mao0824.github.io.git/tags/%E4%BB%A3%E7%A0%81%E5%9D%97/"/>
+    
+  </entry>
   
   <entry>
     <title>值传递和引用传递</title>
