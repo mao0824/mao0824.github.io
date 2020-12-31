@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>static final abstract | Serein's blog</title><meta name="keywords" content="关键字"><meta name="author" content="Serein"><meta name="copyright" content="Serein"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="static关键字—修饰符    变量、方法、代码块、内部类 静态变量  静态修饰的变量随着类的加载（方法区的静态常量池）而加载到方法区的静态区，静态区会对存储的静态变量赋予默认系统初始值。静态变量也叫类变量（静态变量与类同级），静态变量可以通过类名.的形式调用也可以通过对象调用。   静态变量在类所有的对象里都是一样的地址值，不同对象都指向同一个静态变量—共享      属性什么时候加上stat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="static final abstract">
+<meta property="og:url" content="https://mao0824.github.io.git/2020/12/31/static-final-abstract/index.html">
+<meta property="og:site_name" content="Serein&#39;s blog">
+<meta property="og:description" content="static关键字—修饰符    变量、方法、代码块、内部类 静态变量  静态修饰的变量随着类的加载（方法区的静态常量池）而加载到方法区的静态区，静态区会对存储的静态变量赋予默认系统初始值。静态变量也叫类变量（静态变量与类同级），静态变量可以通过类名.的形式调用也可以通过对象调用。   静态变量在类所有的对象里都是一样的地址值，不同对象都指向同一个静态变量—共享      属性什么时候加上stat">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mao0824/pictureBed@latest/2020/12/24/93b36a3318465ae915ab8c6ace091f2f.png">
+<meta property="article:published_time" content="2020-12-31T01:57:45.000Z">
+<meta property="article:modified_time" content="2020-12-31T02:03:53.614Z">
+<meta property="article:author" content="Serein">
+<meta property="article:tag" content="关键字">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mao0824/pictureBed@latest/2020/12/24/93b36a3318465ae915ab8c6ace091f2f.png"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/mao0824/pictureBed@latest/2020/12/18/5ffc85605155aec0bb02380767ba657f.png"><link rel="canonical" href="https://mao0824.github.io.git/2020/12/31/static-final-abstract/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2020-12-31 10:03:53'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><link rel="stylesheet" href="/css/mouse.css"><link rel="stylesheet" href="/css/phone.css"><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Serein's blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/mao0824/pictureBed@latest/2020/12/18/5ffc85605155aec0bb02380767ba657f.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/mao0824/pictureBed@latest/2020/12/24/93b36a3318465ae915ab8c6ace091f2f.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Serein's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">static final abstract</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-31T01:57:45.000Z" title="发表于 2020-12-31 09:57:45">2020-12-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-31T02:03:53.614Z" title="更新于 2020-12-31 10:03:53">2020-12-31</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/">Java</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout hide-aside" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="static"><a href="#static" class="headerlink" title="static"></a>static</h1><p>关键字—修饰符    变量、方法、代码块、内部类</p>
+<h2 id="静态变量"><a href="#静态变量" class="headerlink" title="静态变量"></a>静态变量</h2><p>  静态修饰的变量随着类的加载（方法区的静态常量池）而加载到方法区的静态区，静态区会对存储的静态变量赋予默认系统初始值。静态变量也叫类变量（静态变量与类同级），静态变量可以通过类名.的形式调用也可以通过对象调用。</p>
+<p>  静态变量在类所有的对象里都是一样的地址值，不同对象都指向同一个静态变量—共享   </p>
+<p>  属性什么时候加上static?</p>
+<p>  1、不通过对象调用  2、属性是可以被共享时</p>
+<p>  静态变量可以定义在构造方法中？</p>
+<p>  不可以，方法只有被调用时才能被执行，方法里的内容才能执行，但是静态变量随着类的加载而加载。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mao0824/pictureBed@latest/2020/12/31/4b9a7bbdbae7020942629f5bd2f010f1.png"></p>
+<h2 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h2><p>  静态方法随着类的加载（静态常量池）而加载到方法区的静态区，不会有默认初始值，当静态方法被调用是加载到栈中执行。静态方法也叫类方法，可以通过类名.调用也可以通过对象调用。</p>
+<p>  静态方法中可以定义静态变量？</p>
+<p>  不可以，方法里的内容只能在被调用时才执行，但是静态变量随着类的加载而加载。</p>
+<p>  静态方法里可以使用this？ </p>
+<p>  不可以，静态方法是和类同级，this是和对象同级，类级别优先对象级别先加载。</p>
+<p>  main方法可以直接调用非静态方法？</p>
+<p>  不能，非静态可以直接调用所有的静态信息，静态只能直接调用静态信息。</p>
+<h1 id="final"><a href="#final" class="headerlink" title="final"></a>final</h1><p> 关键字—修饰符      数据、方法、类</p>
+<h2 id="最终数据"><a href="#最终数据" class="headerlink" title="最终数据"></a>最终数据</h2><ul>
+<li>如果final修饰的是基本类型数据，就值不能改变，就变为了常量。</li>
+<li>如果final修饰的是引用数据类型，就是地址值不能改变但是元素值仍然可以改变，变为了常量。</li>
+<li>如果final修饰的是成员变量就要保证成员变量在创建对象之前给值。</li>
+<li>如果final和static共同修饰（静态常量）保证在类加载完成之前给值。</li>
+</ul>
+<h2 id="最终方法"><a href="#最终方法" class="headerlink" title="最终方法"></a>最终方法</h2><p>可以重载不可以重写（连继承都没有）</p>
+<h2 id="最终类"><a href="#最终类" class="headerlink" title="最终类"></a>最终类</h2><p>  final修饰的类不可以被继承，但可以继承别的类。</p>
+<h1 id="abstract"><a href="#abstract" class="headerlink" title="abstract"></a>abstract</h1><p>关键字—修饰符  方法、类</p>
+<p>如果所有的子类对父类中某个方法都进行了不同程度的重写，那么此时父类中的这个方法的方法体就没有任何意义，就可以把这个方法体去掉加上abstract关键字进行修饰就变成了抽象方法，一个类中出现抽象方法类就要变成抽象类。</p>
+<ul>
+<li>abstract修饰符可以用来修饰方法也可以修饰类，如果修饰方法，那么该方法就是抽象方法；如果修饰类，那么该类就是抽象类。</li>
+<li>抽象类中可以没有抽象方法，但有抽象方法的类一定要声明为抽象类。</li>
+<li>抽象类不能使用new关键字来创建对象。它只是用来让子类继承的。</li>
+<li>抽象方法只有方法的声明，没有方法的实现。</li>
+<li>子类继承抽象类，那就必须要实现抽象类没有实现的抽象方法，否则该子类也要声明为抽象类。</li>
+</ul>
+<p>抽象类可以创建对象？</p>
+<p>不可以，对象如果创建出来，可能会调用到抽象方法就会报错。</p>
+<p>抽象类可以定义属性和方法？</p>
+<p>可以</p>
+<p>抽象方法可以被private/static/final分别修饰吗？</p>
+<p>抽象方法就是为了重写，但是被修饰之后就不会有重写</p>
+<p>抽象类可以被final修饰？</p>
+<p>不可以，修饰之后不能被继承。</p>
+<p> 抽象类的含义/意义？</p>
+<p>1、为了满足类提供属性和方法但是不能创建对象场景。</p>
+<p>2、就是为了继承延展功能。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Serein</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://mao0824.github.io.git/2020/12/31/static-final-abstract/">https://mao0824.github.io.git/2020/12/31/static-final-abstract/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://mao0824.github.io.git" target="_blank">Serein's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%85%B3%E9%94%AE%E5%AD%97/">关键字</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/mao0824/pictureBed@latest/2020/12/24/93b36a3318465ae915ab8c6ace091f2f.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/12/29/Java%E4%B8%AD%E4%BA%94%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/mao0824/pictureBed@latest/2020/12/24/9037287d5598adde7716c5f617ff0eb9.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Java中五种常见的代码块</div></div></a></div></nav></div></main><footer id="footer" style="background-color: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2020 By Serein</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div id="running-time"></div><script>setInterval(()=>{let create_time=Math.round(new Date(Date.UTC(2020,11,20,1,1,0)).getTime()/1000);let timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);let second=timestamp-create_time;let time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600;}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600;}if(second>=3600){time[2]=parseInt(second/3600);second%=3600;}if(second>=60){time[3]=parseInt(second/60);second%=60;}if(second>0){time[4]=second;}currentTimeHtml='本站已勉强运行 '+time[0]+' 年 '+time[1]+' 天 '+time[2]+' 时 '+time[3]+' 分 '+time[4]+' 秒';document.getElementById("running-time").innerHTML=currentTimeHtml;},1000);</script></div><1></1></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.5/sakura.js"></script><script src="/js/banner.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="true" data-text="富强,民主,和平,和谐" data-fontsize="15px" data-random="false" async="async"></script></div></body></html>

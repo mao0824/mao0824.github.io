@@ -6,7 +6,7 @@
   <link href="https://mao0824.github.io.git/atom.xml" rel="self"/>
   
   <link href="https://mao0824.github.io.git/"/>
-  <updated>2020-12-29T00:48:39.090Z</updated>
+  <updated>2020-12-31T02:03:53.614Z</updated>
   <id>https://mao0824.github.io.git/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>static final abstract</title>
+    <link href="https://mao0824.github.io.git/2020/12/31/static-final-abstract/"/>
+    <id>https://mao0824.github.io.git/2020/12/31/static-final-abstract/</id>
+    <published>2020-12-31T01:57:45.000Z</published>
+    <updated>2020-12-31T02:03:53.614Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="static"><a href="#static" class="headerlink" title="static"></a>static</h1><p>关键字—修饰符    变量、方法、代码块、内部类</p><h2 id="静态变量"><a href="#静态变量" class="headerlink" title="静态变量"></a>静态变量</h2><p>  静态修饰的变量随着类的加载（方法区的静态常量池）而加载到方法区的静态区，静态区会对存储的静态变量赋予默认系统初始值。静态变量也叫类变量（静态变量与类同级），静态变量可以通过类名.的形式调用也可以通过对象调用。</p><p>  静态变量在类所有的对象里都是一样的地址值，不同对象都指向同一个静态变量—共享   </p><p>  属性什么时候加上static?</p><p>  1、不通过对象调用  2、属性是可以被共享时</p><p>  静态变量可以定义在构造方法中？</p><p>  不可以，方法只有被调用时才能被执行，方法里的内容才能执行，但是静态变量随着类的加载而加载。</p><p><img src="https://cdn.jsdelivr.net/gh/mao0824/pictureBed@latest/2020/12/31/4b9a7bbdbae7020942629f5bd2f010f1.png"></p><h2 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h2><p>  静态方法随着类的加载（静态常量池）而加载到方法区的静态区，不会有默认初始值，当静态方法被调用是加载到栈中执行。静态方法也叫类方法，可以通过类名.调用也可以通过对象调用。</p><p>  静态方法中可以定义静态变量？</p><p>  不可以，方法里的内容只能在被调用时才执行，但是静态变量随着类的加载而加载。</p><p>  静态方法里可以使用this？ </p><p>  不可以，静态方法是和类同级，this是和对象同级，类级别优先对象级别先加载。</p><p>  main方法可以直接调用非静态方法？</p><p>  不能，非静态可以直接调用所有的静态信息，静态只能直接调用静态信息。</p><h1 id="final"><a href="#final" class="headerlink" title="final"></a>final</h1><p> 关键字—修饰符      数据、方法、类</p><h2 id="最终数据"><a href="#最终数据" class="headerlink" title="最终数据"></a>最终数据</h2><ul><li>如果final修饰的是基本类型数据，就值不能改变，就变为了常量。</li><li>如果final修饰的是引用数据类型，就是地址值不能改变但是元素值仍然可以改变，变为了常量。</li><li>如果final修饰的是成员变量就要保证成员变量在创建对象之前给值。</li><li>如果final和static共同修饰（静态常量）保证在类加载完成之前给值。</li></ul><h2 id="最终方法"><a href="#最终方法" class="headerlink" title="最终方法"></a>最终方法</h2><p>可以重载不可以重写（连继承都没有）</p><h2 id="最终类"><a href="#最终类" class="headerlink" title="最终类"></a>最终类</h2><p>  final修饰的类不可以被继承，但可以继承别的类。</p><h1 id="abstract"><a href="#abstract" class="headerlink" title="abstract"></a>abstract</h1><p>关键字—修饰符  方法、类</p><p>如果所有的子类对父类中某个方法都进行了不同程度的重写，那么此时父类中的这个方法的方法体就没有任何意义，就可以把这个方法体去掉加上abstract关键字进行修饰就变成了抽象方法，一个类中出现抽象方法类就要变成抽象类。</p><ul><li>abstract修饰符可以用来修饰方法也可以修饰类，如果修饰方法，那么该方法就是抽象方法；如果修饰类，那么该类就是抽象类。</li><li>抽象类中可以没有抽象方法，但有抽象方法的类一定要声明为抽象类。</li><li>抽象类不能使用new关键字来创建对象。它只是用来让子类继承的。</li><li>抽象方法只有方法的声明，没有方法的实现。</li><li>子类继承抽象类，那就必须要实现抽象类没有实现的抽象方法，否则该子类也要声明为抽象类。</li></ul><p>抽象类可以创建对象？</p><p>不可以，对象如果创建出来，可能会调用到抽象方法就会报错。</p><p>抽象类可以定义属性和方法？</p><p>可以</p><p>抽象方法可以被private/static/final分别修饰吗？</p><p>抽象方法就是为了重写，但是被修饰之后就不会有重写</p><p>抽象类可以被final修饰？</p><p>不可以，修饰之后不能被继承。</p><p> 抽象类的含义/意义？</p><p>1、为了满足类提供属性和方法但是不能创建对象场景。</p><p>2、就是为了继承延展功能。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;static&quot;&gt;&lt;a href=&quot;#static&quot; class=&quot;headerlink&quot; title=&quot;static&quot;&gt;&lt;/a&gt;static&lt;/h1&gt;&lt;p&gt;关键字—修饰符    变量、方法、代码块、内部类&lt;/p&gt;
+&lt;h2 id=&quot;静态变量&quot;&gt;&lt;a href=&quot;#静</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="https://mao0824.github.io.git/categories/Java/"/>
+    
+    
+    <category term="关键字" scheme="https://mao0824.github.io.git/tags/%E5%85%B3%E9%94%AE%E5%AD%97/"/>
+    
+  </entry>
   
   <entry>
     <title>Java中五种常见的代码块</title>
